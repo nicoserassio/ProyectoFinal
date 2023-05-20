@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final Serassio</title>
+    <style>
+      
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+      li {
+        float: left;
+      }      
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }      
+      li a:hover {
+        background-color: #111;
+      }
+      </style>
+      <link rel="stylesheet" href="static/Blog/style.css">
+</head>
+
+<body>
+  
+    <nav class="menu">
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="acerca">Acerca de Mi</a></li>
+          <li><a href="curso/list">Ver/Borrar Posts</a></li>
+          <li><a href="nuevopost">Nuevo Post</a></li>
+          <li><a href="login">Login/Registrarse</a></li>
+          <li><a href="logout">Logout</a></li>
+        </ul>
+      </nav>
+      
+      {% block content %} 
+      {% if mensaje %}
+      <p>{{ mensaje }}</p>
+      {% endif %}
+      {% endblock %}
+</body>
+</html>

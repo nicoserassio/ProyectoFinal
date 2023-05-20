@@ -1,0 +1,32 @@
+{% extends "Blog/main.html" %}
+
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>posts</title>
+</head>
+<body>
+    <center>
+    {% for p in posts %}
+        <button>{{p}}<br></button><br>
+        <button>
+        <a href="{% url 'eliminarpost' p.titulo %}"> Ver</a>&nbsp;&nbsp; &nbsp
+        <a href="{% url 'eliminarpost' p.titulo %}"> Borrar</a>&nbsp;&nbsp; &nbsp; 
+        <a href="{% url 'eliminarpost' p.titulo %}"> Editar</a>
+        </button><br><br>
+                    
+    {% endfor %}
+    <br>
+    <button>
+    <a href="nuevopost">Nuevo Post</a>
+    </button>
+    </center>
+</body>
+</html>
+{% endblock %}

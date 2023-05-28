@@ -1,0 +1,13 @@
+{% extends "blogapp/base.html" %}
+{% block content %} 
+<center>
+    {% for post in posteos %}
+        {{post.titulo}}<br>
+        {{post.resumen}}<br>
+        <a class="btn btn-sm btn-info" href="{% url 'postdetail' post.id %}">Ver</a><br>
+    {% endfor %}
+    <button>
+    <a href="nuevopost">Nuevo Post</a>
+    </button>
+</center>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "blogapp/base.html" %}
+{% block content %}
+    <h1>{{ posteo.titulo }}</h1>
+    <h2>{{ posteo.resumen }}</h2>
+    <p>{{ posteo.texto }}</p>
+    <p>Autor: {{ posteo.autor }}</p>
+    <a class="btn btn-warning" href="{% url 'index' %}">Volver</a>
+    <a class="btn btn-danger" href="{% url 'editpost' posteo.id %}">Editar Post</a>
+    <a class="btn btn-danger" href="{% url 'eliminar' posteo.id %}">Eliminar Post</a>
+{% endblock %}
